@@ -9,7 +9,7 @@ export default function Login() {
     );
   }
   return (
-    <div className="absolute top-2 right-4 border-solid border-[1px] border-white p-3 rounded-xl text-whote">
+    <div className="absolute top-2 right-4 border-solid border-[1px] border-white p-3 rounded-xl text-white">
       <button onClick={() => signIn()}>Sign in</button>
     </div>
   );

@@ -63,7 +63,7 @@ export const Form = ({
       setLoading(true);
 
       for (let i = page; i < page + page + 5; i++) {
-        await new Promise((resolve) => setTimeout(resolve, 5000));
+        await new Promise((resolve) => setTimeout(resolve, 2000));
         console.log(JSON.parse(localStorage.getItem("data") as string));
         const likes = message[i][1];
         response = await query(message[i][0])

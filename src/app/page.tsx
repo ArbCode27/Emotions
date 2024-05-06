@@ -48,7 +48,7 @@ export default function Home() {
           })
           .catch(async () => {
             setError(true);
-            await new Promise((resolve) => setTimeout(resolve, 5000));
+            await new Promise((resolve) => setTimeout(resolve, 2000));
             await query(message[i][0]).then((response) => {
               return { response, likes, message: message[i][0] };
             });
@@ -57,7 +57,6 @@ export default function Home() {
           const data = JSON.parse(localStorage.getItem("data") as string);
           data.push(response);
           localStorage.setItem("data", JSON.stringify(data));
-          setLoading(false);
         } else {
           localStorage.setItem("data", JSON.stringify([response]));
         }
@@ -70,7 +69,6 @@ export default function Home() {
     }
   };
 
-  console.log(data);
   return (
     <main className="py-[98px] w-full flex justify-center items-center bg-black">
       <Login />
