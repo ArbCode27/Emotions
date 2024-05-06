@@ -38,7 +38,7 @@ export default function Home() {
       });
       setLoading(true);
 
-      for (let i = page + 1; i < page + page + 6; i++) {
+      for (let i = page + 1; i < page + 3; i++) {
         await new Promise((resolve) => setTimeout(resolve, 5000));
         console.log(JSON.parse(localStorage.getItem("data") as string));
         const likes = message[i][1];
