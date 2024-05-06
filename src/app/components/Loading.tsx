@@ -4,7 +4,7 @@ import React from "react";
 
 export const Loading = () => {
   return (
-    <div>
+    <div className="pb-[100px]">
       <p className="text-center text-2xl text-white font-bold">
         Cargando resultados...
       </p>

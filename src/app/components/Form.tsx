@@ -62,7 +62,7 @@ export const Form = ({
       localStorage.clear();
       setLoading(true);
 
-      for (let i = page; i < page + page + 6; i++) {
+      for (let i = page; i < page + page + 5; i++) {
         await new Promise((resolve) => setTimeout(resolve, 5000));
         console.log(JSON.parse(localStorage.getItem("data") as string));
         const likes = message[i][1];
@@ -85,7 +85,7 @@ export const Form = ({
           localStorage.setItem("data", JSON.stringify([response]));
         }
       }
-      setPage(page + 6);
+      setPage(page + 5);
       setData(JSON.parse(localStorage.getItem("data") as string));
       setLoading(false);
     } else {

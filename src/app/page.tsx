@@ -57,11 +57,12 @@ export default function Home() {
           const data = JSON.parse(localStorage.getItem("data") as string);
           data.push(response);
           localStorage.setItem("data", JSON.stringify(data));
+          setLoading(false);
         } else {
           localStorage.setItem("data", JSON.stringify([response]));
         }
       }
-      setPage(page + 6);
+      setPage(page + 5);
       setData(JSON.parse(localStorage.getItem("data") as string));
       setLoading(false);
     } else {
