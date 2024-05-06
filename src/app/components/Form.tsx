@@ -40,16 +40,25 @@ export const Form = ({
 }) => {
   const [value, setValue] = useState("");
 
-  const onDrop = useCallback((acceptedFiles) => {
-    const data = Papa.parse(acceptedFiles[0], {
-      complete: function (results) {
-        setFile(results.data);
-      },
-    });
-  }, []);
+  const onDrop = useCallback(
+    (acceptedFiles) => {
+      const data = Papa.parse(acceptedFiles[0], {
+        complete: function (results) {
+          setFile(results.data);
+        },
+      });
+    },
+    [setFile]
+  );
 
   const { getRootProps, getInputProps, isDragActive, acceptedFiles } =
-    useDropzone({ onDrop });
+    useDropzone({
+      onDrop,
+      accept: {
+        ".csv": [".scv"],
+      }, // Specify the accepted file extension
+      multiple: false,
+    });
 
   const handleSubmit = async (event: any) => {
     event.preventDefault();
