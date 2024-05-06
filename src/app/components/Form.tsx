@@ -43,6 +43,7 @@ export const Form = ({
   const onDrop = useCallback(
     (acceptedFiles) => {
       const data = Papa.parse(acceptedFiles[0], {
+        skipEmptyLines: true,
         complete: function (results) {
           setFile(results.data);
         },
