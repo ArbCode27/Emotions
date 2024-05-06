@@ -70,7 +70,7 @@ export default function Home() {
   };
 
   return (
-    <main className="py-[98px] w-full flex justify-center items-center bg-black">
+    <main className="py-[120px] w-full flex justify-center items-center bg-black">
       <Login />
       {error && <Error />}
       {data && <Results loading={loading} handler={handleSubmit} data={data} />}
